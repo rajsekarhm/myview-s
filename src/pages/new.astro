@@ -1,0 +1,19 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+import BlogEditor from '../components/BlogEditor.jsx';
+
+function testFunction() {
+  console.log("ok")
+}
+---
+
+<BlogLayout title="New Blog Post">
+  <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+    <input
+      type="text"
+      placeholder="Post Title"
+      class="w-full text-2xl font-bold mb-4 p-2 border border-gray-300 rounded"
+    />
+    <BlogEditor client:load initialValue="" onSave={testFunction} />
+  </div>
+</BlogLayout>

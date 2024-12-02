@@ -1,0 +1,18 @@
+---
+const posts = await Astro.glob('../pages/posts/*.md');
+---
+<div class="bg-white rounded-lg shadow-md p-6">
+  <h2 class="text-xl font-bold text-gray-800 mb-4">Recent Posts</h2>
+  <ul class="space-y-2">
+    {posts.map((post) => (
+      <li>
+        <a 
+          href={post.url} 
+          class="text-blue-500 hover:text-blue-700 block"
+        >
+          {post.frontmatter.title}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
